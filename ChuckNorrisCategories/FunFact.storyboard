@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Fun Fact View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="FunFactViewController" id="Y6W-OH-hqX" customClass="FunFactViewController" customModule="ChuckNorrisCategories" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcj-nJ-xO6">
+                                <rect key="frame" x="20" y="118" width="353" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="euF-6u-mBs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0g-XR-W7D">
+                                <rect key="frame" x="46.666666666666657" y="303" width="300" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="8WL-21-OcS"/>
+                                    <constraint firstAttribute="width" constant="300" id="BEU-tD-7xT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSB-TX-cQ8">
+                                <rect key="frame" x="121.66666666666669" y="653" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="OVc-a7-7x5"/>
+                                    <constraint firstAttribute="height" constant="40" id="zVn-b3-itp"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Fun Fact">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="0.92092120649999998" green="0.1064747652" blue="0.35243832320000001" alpha="0.95931448060000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" red="0.86883815618436377" green="0.87572781094968943" blue="0.89639677524566652" alpha="0.56321522887323938" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ur9-oA-Kbi">
+                                <rect key="frame" x="160" y="743" width="73" height="41"/>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.9209212064743042" green="0.10647476515790481" blue="0.35243832324243013" alpha="0.95931448063380287" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="L0g-XR-W7D" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FbE-0H-CDO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Dcj-nJ-xO6" secondAttribute="trailing" constant="20" id="KvD-aW-HTK"/>
+                            <constraint firstItem="kSB-TX-cQ8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="NHC-cv-t6E"/>
+                            <constraint firstItem="ur9-oA-Kbi" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Pcw-xZ-ggt"/>
+                            <constraint firstItem="L0g-XR-W7D" firstAttribute="top" secondItem="Dcj-nJ-xO6" secondAttribute="bottom" constant="150" id="TPa-0Z-Wnx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ur9-oA-Kbi" secondAttribute="bottom" id="Z9d-Ac-eck"/>
+                            <constraint firstItem="ur9-oA-Kbi" firstAttribute="top" secondItem="kSB-TX-cQ8" secondAttribute="bottom" constant="50" id="cXB-CA-ne6"/>
+                            <constraint firstItem="kSB-TX-cQ8" firstAttribute="top" secondItem="L0g-XR-W7D" secondAttribute="bottom" constant="100" id="dMp-sx-d7e"/>
+                            <constraint firstItem="Dcj-nJ-xO6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="mpv-f3-iot"/>
+                            <constraint firstItem="Dcj-nJ-xO6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="v1u-1a-VMN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="91.549295774647888"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
