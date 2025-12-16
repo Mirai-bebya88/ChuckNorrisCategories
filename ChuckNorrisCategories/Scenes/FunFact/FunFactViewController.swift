@@ -8,6 +8,8 @@
 import UIKit
 
 class FunFactViewController: UIViewController {
+    
+    private var apiManager: FunFactsAPIManagerProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
