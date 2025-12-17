@@ -47,6 +47,9 @@
                                     <color key="baseForegroundColor" red="0.92092120649999998" green="0.1064747652" blue="0.35243832320000001" alpha="0.95931448060000002" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="baseBackgroundColor" red="0.86883815618436377" green="0.87572781094968943" blue="0.89639677524566652" alpha="0.56321522887323938" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="funFactButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QKC-Ar-cgn"/>
+                                </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ur9-oA-Kbi">
                                 <rect key="frame" x="160" y="743" width="73" height="41"/>
@@ -67,6 +70,11 @@
                             <constraint firstItem="Dcj-nJ-xO6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="v1u-1a-VMN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="categoryLabel" destination="Dcj-nJ-xO6" id="kEa-tH-B1p"/>
+                        <outlet property="funFactContent" destination="L0g-XR-W7D" id="6mm-mX-Sw3"/>
+                        <outlet property="pageControl" destination="ur9-oA-Kbi" id="6s8-sm-Yt2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,13 +9,52 @@ import UIKit
 
 class FunFactViewController: UIViewController {
     
+    
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var funFactContent: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    
+    var category: FunFactCategory = .animal
+    var pageIndex: Int = 0
+    var totalPages: Int = 0
+    
     private var apiManager: FunFactsAPIManagerProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        categoryLabel.text = "⭐\(getCategoryName())⭐"
+        
+        pageControl.numberOfPages = totalPages
+        pageControl.currentPage = pageIndex
+        
+        fetchFunFacts(with: category)
     }
-
-
+    
+    
+    @IBAction func funFactButtonTapped(_ sender: UIButton) {
+        fetchFunFacts(with: category)
+    }
+    
+    func fetchFunFacts(with type: FunFactCategory = .animal) {
+        apiManager = FunFactsAPIManager()
+        
+        apiManager?.fetchFunFacts(with: type) { result in
+            switch result {
+            case .success(let funFact):
+                self.funFactContent.text = funFact.value
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func getCategoryName() -> String {
+        switch category {
+        case .animal: return "Animal"
+        case .dev: return "Dev"
+        case .travel: return "Travel"
+        }
+    }
 }
 
