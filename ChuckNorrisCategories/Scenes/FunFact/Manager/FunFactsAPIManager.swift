@@ -30,24 +30,22 @@ class FunFactsAPIManager: FunFactsAPIManagerProtocol {
         let urlString = "https://api.chucknorris.io/jokes/random?category=\(type.endPoint)"
         guard let url = URL(string: urlString) else { return }
         
-    URLSession.shared.dataTask(with: url) { data, _, error in
-        if let error {
-            completion(.failure(error))
-            print(error)
-        }
-        
-        guard let data else { return }
-        
-        do {
-            let decodedData = try JSONDecoder().decode(FunFact.self, from: data)
-            DispatchQueue.main.async {
-                completion(.success(decodedData))
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error {
+                completion(.failure(error))
+                print(error)
             }
-        } catch {
-            completion(.failure(error))
-        }
-    }.resume()
-}
-    
-    
+            
+            guard let data else { return }
+            
+            do {
+                let decodedData = try JSONDecoder().decode(FunFact.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(decodedData))
+                }
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
 }

@@ -3,13 +3,12 @@ import UIKit
 class FunFactPageViewController: UIPageViewController {
     
     let categories: [FunFactCategory] = [.animal, .dev, .travel]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataSource = self
         
-        // Set the first view controller
         if let firstVC = viewControllerAtIndex(0) {
             setViewControllers([firstVC], direction: .forward, animated: true)
         }
@@ -32,7 +31,6 @@ class FunFactPageViewController: UIPageViewController {
 }
 
 extension FunFactPageViewController: UIPageViewControllerDataSource {
-    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let contentVC = viewController as? FunFactViewController else { return nil }
         let index = contentVC.pageIndex

@@ -10,17 +10,16 @@ import UIKit
 class FunFactViewController: UIViewController {
     
     
-    @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var funFactContent: UILabel!
-    @IBOutlet weak var pageControl: UIPageControl!
-    
+    @IBOutlet private weak var categoryLabel: UILabel!
+    @IBOutlet private weak var funFactContent: UILabel!
+    @IBOutlet private weak var pageControl: UIPageControl!
     
     var category: FunFactCategory = .animal
     var pageIndex: Int = 0
     var totalPages: Int = 0
     
     private var apiManager: FunFactsAPIManagerProtocol?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryLabel.text = "⭐\(getCategoryName())⭐"
